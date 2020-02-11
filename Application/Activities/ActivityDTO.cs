@@ -1,0 +1,18 @@
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace Application.Activities
+{
+    public class ActivityDTO
+    {
+        public System.Guid Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public System.DateTime Date { get; set; }
+        public string City { get; set; }
+        public string Venue { get; set; }
+        [JsonPropertyName("Attendees")]
+        public ICollection<AttendeeDTO> UserActivities { get; set; }
+    }
+}
