@@ -4,7 +4,6 @@ using Application.Interfaces;
 using Domain;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using Persistence;
 
 namespace Application.User
 {
@@ -31,7 +30,7 @@ namespace Application.User
             return new UserToReturn
             {
                 DisplayName = user.DisplayName,
-                UserName = user.UserName,
+                Username = user.UserName,
                 Token = _jwtGenerator.CreateToken(user),
                 Image = null
             };

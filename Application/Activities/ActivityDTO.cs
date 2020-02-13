@@ -12,7 +12,7 @@ namespace Application.Activities
         public System.DateTime Date { get; set; }
         public string City { get; set; }
         public string Venue { get; set; }
-        [JsonPropertyName("Attendees")]
+        [JsonPropertyName("attendees")]
         public ICollection<AttendeeDTO> UserActivities { get; set; }
     }
 }
