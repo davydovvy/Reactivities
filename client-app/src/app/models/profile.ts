@@ -3,6 +3,9 @@ export interface IProfile {
    username: string,
    bio: string,
    image: string,
+   following: boolean,
+   followersCount: number,
+   followingCount: number,
    photos: IPhoto[]
 }
 
@@ -18,6 +21,9 @@ export class ProfileFormValues implements IProfile {
    bio: string = ''
    image: string =''
    photos: IPhoto[] = []
+   following: boolean = false
+   followersCount: number = 0
+   followingCount: number = 0
 
    constructor(init? : IProfile) {
       Object.assign(this, init);
