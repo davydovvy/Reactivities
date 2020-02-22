@@ -99,4 +99,23 @@ export default class ProfileStore {
          });
       }
    }
+
+   @action editProfile = async (profile: IProfile) => {
+      this.loading = true;
+      try {
+         console.log(profile!.bio);
+         await agent.Profiles.update(profile);
+         runInAction('editing profile', () => {
+            this.profile = profile;
+            this.rootStore.userStore.user!.displayName = profile.displayName; 
+         });
+      } catch (error) {
+         toast.error('Problem submitting data');
+         console.log(error.response);
+      } finally {
+         runInAction('editing profile finally', () => {
+            this.loading = false;
+         });
+      }
+   };
 }
