@@ -29,3 +29,10 @@ export class ProfileFormValues implements IProfile {
       Object.assign(this, init);
   }
 }
+
+export interface IUserActivity {
+   id: string,
+   title: string,
+   category: string,
+   date: Date
+}
